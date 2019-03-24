@@ -1,0 +1,16 @@
+#!/usr/bin/python
+from sys import *
+from lexer import Lexer
+from parser import Parser
+
+def open_file(filename):
+    data = open(filename,"r").read()
+    return data
+
+def init():
+    data = open_file(argv[1])
+    tokens = Lexer(data).lex()
+    #print(tokens)
+    Parser(tokens).parse()
+
+init()
