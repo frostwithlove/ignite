@@ -1,4 +1,4 @@
-
+from ast import AST
 
 class Parser():
     def __init__(self, tokens):
@@ -9,15 +9,11 @@ class Parser():
         for i in range(0,len(self.tokens)):
             for token in self.tokens[i]:
                 if(token == "print"):
-                    string = ""
-                    for char in list(self.tokens[i][2]):
-                        if char != "\"" :
-                            string += char
-                    try :
-                        string = eval(string)
-                    except:
-                        pass                 
-                    print(string)
+                    AST().printToScreen(self.tokens[i][2])
+                elif (token.startswith("$")):
+                    AST().setVariable(self.tokens[i])
+                    
+                
 
 
         

@@ -3,14 +3,19 @@ from sys import *
 from lexer import Lexer
 from parser import Parser
 
+_version = "1.0.0"
+
 def open_file(filename):
     data = open(filename,"r").read()
     return data
 
 def init():
-    data = open_file(argv[1])
-    tokens = Lexer(data).lex()
-    #print(tokens)
-    Parser(tokens).parse()
+    if(argv[1] == "-v" or argv[1] == "--version"):
+        print(" _________________ \n\n :: Ignite ::\n _________________ \n\n version : " + _version + "\n\n")
+    else:
+        data = open_file(argv[1])
+        tokens = Lexer(data).lex()
+        #print(tokens)
+        Parser(tokens).parse()
 
 init()

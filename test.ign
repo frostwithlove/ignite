@@ -1,4 +1,12 @@
-print : "hello bokchod" ; 
-print : 5 ;
-print : 5 + 5 ;
-print : 5/2.87;
+#Ignite - Sayantan
+
+# set variable
+$test = 5 + 3 / 3;
+$string = "hello world";
+
+# print them
+print : $string;
+print : $test;
+
+
+
